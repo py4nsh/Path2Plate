@@ -178,6 +178,20 @@ Linear searching is used to find specific records, such as customers, restaurant
 
 ### 12. Other C++ Concepts
 
+### Object-Oriented Programming (OOP)
+
+The supplementary file `Path2Plate_code.cpp` demonstrates Object-Oriented Programming concepts using:
+
+- Classes and Objects
+- Encapsulation using private and public access specifiers
+- Constructors
+- Member functions
+- Vectors and other C++ STL features
+
+This file provides a simplified, class-based demonstration of the project's core modules and DSA concepts.
+
+**Note:** The main browser-based application is compiled from `Path2Plate.cpp`, while `Path2Plate_code.cpp` is provided as a supplementary C++ demonstration.
+
 - Constructors and member functions
 - Access specifiers (`private` and `public`)
 - Functions and modular programming
