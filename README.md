@@ -1,128 +1,391 @@
-# Path2Plate — C++ Food Delivery System
+# 🍽️ Path2Plate – C++ Food Ordering & Delivery System
 
-**Team Code_crew | Second-year C++ / Data Structures project**
+**Team Code_crew | Second-Year C++ & Data Structures and Algorithms Project**
 
-Path2Plate is a small food-delivery demonstration app. It keeps the **application logic, data processing, file handling and DSA algorithms in C++**. A lightweight HTML/CSS/JavaScript page provides the browser-based graphical interface, and communicates with the C++ program through its built-in local socket server. There is **no Python, Flask, Django, Node.js backend, or external database**.
+Path2Plate is a food ordering and delivery application developed using C++. It allows users to browse restaurants, explore food menus, add items to their cart, calculate bills, select payment methods, place orders and track delivery status.
 
-> If your course rule literally prohibits HTML/CSS/JavaScript as well as Python, confirm that with your instructor: a browser UI needs a presentation layer. In this project, that layer only displays the interface; C++ handles the app operations and stored data.
+The project demonstrates the practical use of Data Structures and Algorithms through features such as FIFO order management and shortest delivery route calculation using Dijkstra's algorithm.
 
+The application uses C++ for its backend operations, data processing, file handling and DSA implementation. A browser-based interface built using HTML, CSS and JavaScript communicates with the C++ backend through a local socket server.
 
-👥 Team Members & Contributions
+---
 
-Member 1 – Customer and Order Module
+## 🚀 Features
 
-Responsibilities:
+### Customer Features
+- Customer registration and login using a 10-digit mobile number.
+- Restaurant browsing and searching.
+- Food menu display with prices and vegetarian/non-vegetarian options.
+- Add food items to cart.
+- Increase or decrease item quantities.
+- Automatic bill calculation.
+- GST and delivery charge calculation.
+- Multiple payment options.
+- Order confirmation and order history.
+- Delivery status tracking.
+- Shortest delivery route calculation.
 
-* Customer registration and customer details management.
-* Food selection and cart management.
-* Bill calculation and order placement.
+### Payment Features
+Users can select from the following payment methods:
 
-Concepts Used: Classes, Objects, Encapsulation, Vectors, Functions, Linear Searching.
+- Cash on Delivery (COD)
+- UPI Demo
+- Card Demo
 
-Status: Implemented.
+**Note:** UPI and Card payments are simulated for demonstration purposes. No real payment gateway is integrated, and no actual money is transferred.
 
-Member 2 – Restaurant and Food Module
+### Admin Features
+- Admin access using a demonstration PIN.
+- View customer orders.
+- View order details and payment information.
+- Process pending orders using a FIFO queue.
+- Update order delivery status.
+- Manage restaurant menu items.
+- View order and delivery-related statistics.
 
-Responsibilities:
+### Delivery Features
+- Display delivery route between restaurant and customer locations.
+- Calculate the shortest route using Dijkstra's algorithm.
+- Display delivery distance and estimated delivery time.
+- Track order progress through different delivery stages.
+- Visual delivery tracking with an animated scooter.
 
-* Managing restaurant details.
-* Displaying food menus and storing food prices.
-* Restaurant and food selection.
+**Note:** The scooter animation is for visual demonstration only. It does not use real GPS or live delivery partner tracking.
 
-Concepts Used: Classes, Objects, Vectors, Functions.
+---
 
-Status: Implemented.
+## 🛠️ Technology Stack
 
-Member 3 – Route Optimization Module
+| Technology | Purpose |
+|---|---|
+| C++14 | Backend logic and application functionality |
+| HTML5 | Frontend structure |
+| CSS3 | Styling and responsive UI |
+| JavaScript | Frontend interactions |
+| C++ STL | Data structures and algorithms |
+| File Handling | Persistent storage using text files |
+| Socket Programming | Communication between frontend and C++ backend |
+| JSON | Data exchange between frontend and backend |
+| GCC / MinGW | C++ compilation |
 
-Responsibilities:
+**Important:** The main application logic, order processing, billing, file handling and DSA algorithms are implemented in C++. HTML, CSS and JavaScript are used only for the browser-based user interface.
 
-* Representing locations and roads using a weighted graph.
-* Finding the shortest delivery route.
-* Optimizing delivery paths.
+No Python, Flask, Django, Node.js backend or external database is used.
 
-Concepts Used: Graphs, Adjacency Lists, Dijkstra’s Algorithm, Priority Queue.
+---
 
-Status: Implemented.
+## 🧠 Data Structures & Algorithms Used
 
-Member 4 – Delivery and Integration Module
+The project implements the following C++ and DSA concepts:
 
-Responsibilities:
+### 1. Structures (`struct`)
+Structures are used to group related information into a single data type.
 
-* Managing delivery orders using a queue.
-* Updating delivery statuses (Pending, Out for Delivery, Delivered).
-* Integrating all project modules into one application.
-* Developing the frontend/UI and connecting it with the backend.
-* Testing the complete application.
-* Implementing backend indexing and data management using C++.
+Examples:
+- Location
+- Road
+- Restaurant
+- FoodItem
+- Customer
+- Order
+- OrderLine
+- Bill
+- RouteResult
 
-Concepts Used: Classes, Objects, Queues, Functions, C++ Data Structures and Integration.
+### 2. Vectors
+Vectors are used to store collections of data dynamically.
 
-Status: Implemented.
+Examples:
+- Customer records
+- Restaurant details
+- Food menu items
+- Orders
+- Locations and roads
 
-## Run on Windows
+### 3. Queue (FIFO)
+A queue is used to manage pending delivery orders.
 
-1. Extract this folder to a normal location.
-2. Install MSYS2 with the **UCRT64** GCC compiler if needed.
-3. Double-click `build_and_run.bat`.
-4. When the console reports that the server is running, open <http://localhost:8000> in Chrome or Edge.
-5. Keep the console window open while using the app. Press `Ctrl+C` to stop it.
+**FIFO:** First In, First Out.
 
-The batch file checks the common MSYS2 UCRT64 locations, including `%USERPROFILE%\Downloads\ucrt64\bin` and `C:\msys64\ucrt64\bin`, and compiles with C++14 plus the Windows socket library.
+The order placed first is processed first.
 
-## Run on Linux / macOS
+STL operations used:
+- `push()`
+- `front()`
+- `pop()`
+- `empty()`
+
+### 4. Graph
+A weighted graph represents different delivery locations and roads connecting them.
+
+- Vertices represent locations.
+- Edges represent roads.
+- Weights represent road distances in kilometres.
+
+### 5. Adjacency List
+The graph is represented using an adjacency list.
+
+Each location stores its neighbouring locations along with the corresponding road distances.
+
+### 6. Priority Queue
+A priority queue is used in Dijkstra's algorithm to process the location with the smallest known distance first.
+
+A min-heap is used for efficient shortest-path calculation.
+
+### 7. Dijkstra's Shortest Path Algorithm
+Dijkstra's algorithm calculates the shortest delivery route between a restaurant and a customer's location.
+
+The algorithm:
+- Creates a weighted graph.
+- Initializes distances.
+- Uses a priority queue.
+- Updates distances when a shorter path is found.
+- Reconstructs the shortest route.
+
+### 8. Linear Searching
+Linear searching is used to find specific records, such as customers, restaurants and food items, by checking elements one by one.
+
+### 9. Maps and Pairs
+- `map` is used for storing and retrieving request parameters.
+- `pair` is used to store related values such as neighbouring locations and distances.
+
+### 10. Other C++ Concepts
+- Functions and modular programming
+- Strings and string manipulation
+- Pointers and references
+- Conditional statements and loops
+- Input/output streams
+- File handling using `ifstream` and `ofstream`
+- STL algorithms such as `reverse()`
+- Basic socket programming
+
+---
+
+### How the System Works
+
+1. The user interacts with the browser-based interface.
+2. JavaScript sends requests to the local C++ server.
+3. The C++ backend processes the requested operation.
+4. Data structures and algorithms are used where required.
+5. Application records are read from or saved to text files.
+6. The C++ backend sends a JSON response.
+7. The frontend updates the interface according to the response.
+
+---
+
+## 👥 Team Members & Contributions
+
+### Member 1 – Customer and Order Module
+
+**Responsibilities:**
+- Customer registration.
+- Viewing and managing customer details.
+- Food selection and cart management.
+- Bill calculation.
+- Order placement.
+
+**Concepts Used:**
+- Structures
+- Functions
+- Vectors
+- Strings
+- Linear Searching
+- File Handling
+
+**Status:** Implemented.
+
+### Member 2 – Restaurant and Food Module
+
+**Responsibilities:**
+- Managing restaurant details.
+- Displaying restaurant information.
+- Managing food menus and prices.
+- Restaurant and food selection.
+
+**Concepts Used:**
+- Structures
+- Functions
+- Vectors
+- Strings
+- File Handling
+
+**Status:** Implemented.
+
+### Member 3 – Route Optimization Module
+
+**Responsibilities:**
+- Representing locations and roads using a weighted graph.
+- Creating an adjacency list.
+- Calculating the shortest delivery route.
+- Determining delivery distance and estimated time.
+
+**Concepts Used:**
+- Graphs
+- Weighted Graphs
+- Adjacency Lists
+- Priority Queue
+- Dijkstra's Algorithm
+- Vectors and Pairs
+
+**Status:** Implemented.
+
+### Member 4 – Delivery and Integration Module
+
+**Responsibilities:**
+- Managing pending orders using a queue.
+- Maintaining order delivery statuses.
+- Integrating different project modules.
+- Connecting the frontend with the C++ backend.
+- Developing and integrating the user interface.
+- Testing the complete application.
+
+**Concepts Used:**
+- Queue (FIFO)
+- Functions
+- Structures
+- C++ STL
+- Socket Programming
+- Client-Server Communication
+
+**Status:** Implemented.
+
+---
+
+## 💾 File-Based Storage
+
+Path2Plate uses text files for storing application data instead of an external database.
+
+The application automatically creates a `data/` directory when it runs for the first time.
+
+The following files are used:
+
+| File | Stored Information |
+|---|---|
+| `locations.txt` | Delivery location details |
+| `roads.txt` | Roads and distances between locations |
+| `restaurants.txt` | Restaurant information |
+| `menu.txt` | Food items and prices |
+| `customers.txt` | Registered customer details |
+| `orders.txt` | Order details, billing, routes and statuses |
+
+### File Handling Functions
+
+- `ifstream` is used to read data from files.
+- `ofstream` is used to write and update data.
+- `readRows()` reads records from text files.
+- `writeRows()` writes records into text files.
+- `loadAll()` loads stored information into vectors.
+
+This provides basic data persistence between application runs.
+
+---
+
+## ⚙️ Installation and Execution
+
+### Requirements
+
+- Windows, Linux or macOS.
+- GCC compiler with C++14 support.
+- MinGW/MSYS2 UCRT64 on Windows.
+- A modern web browser such as Chrome or Edge.
+
+### Windows Setup
+
+1. Clone or download this repository.
+2. Extract the project folder.
+3. Install MSYS2 with the UCRT64 GCC compiler if not already installed.
+4. Open the project folder.
+5. Double-click `build_and_run.bat`.
+6. Wait until the C++ server starts.
+7. Open your browser and visit:
+
+   `http://localhost:8000`
+
+8. Keep the terminal window running while using the application.
+9. Press `Ctrl + C` in the terminal to stop the server.
+
+### Manual Compilation (Windows)
+
+If compiling manually using MinGW:
+
+```bash
+g++ -std=c++14 Path2Plate.cpp -o Path2Plate.exe -lws2_32
+```
+
+Run:
+
+```bash
+Path2Plate.exe
+```
+
+### Linux / macOS Setup
+
+Compile the application:
 
 ```bash
 g++ -std=c++14 Path2Plate.cpp -o Path2Plate
+```
+
+Run:
+
+```bash
 ./Path2Plate
 ```
 
-Then open <http://localhost:8000>.
+Open:
 
-Run the program from this folder because it loads `index.html` and creates its `data/` folder relative to the current working directory.
+`http://localhost:8000`
 
-## Features
+**Important:** Run the executable from the project directory because the application loads `index.html` and creates its `data/` directory relative to the current working directory.
 
-- Customer registration and login using a 10-digit phone number
-- Restaurant search and menu browsing
-- Cart quantity controls and bill calculation (subtotal, delivery fee and GST)
-- Payment choice after selecting food: Cash on Delivery, UPI Demo and Card Demo
-- Order confirmation, order history and delivery-status tracking
-- Admin page to view orders, process the FIFO queue, update delivery status and manage menu items
-- Shortest delivery route using a weighted graph and Dijkstra's algorithm
+---
 
-### Payment demonstration only
+## 🔐 Admin Access
 
-UPI Demo and Card Demo simulate a successful payment for a classroom presentation. No payment gateway is connected, no money is transferred, and the app does not request real PINs, card numbers or CVVs.
+The project includes an admin interface for demonstration purposes.
 
-## C++ / DSA concepts
+**Default demonstration PIN:** `1234`
 
-- Structures, functions, vectors and string handling
-- File handling with `ifstream` and `ofstream`
-- `queue` for pending orders (FIFO)
-- Weighted graph represented with an adjacency list
-- `priority_queue` and Dijkstra's shortest-path algorithm
-- Basic client/server socket communication in C++
+This PIN is intended only for classroom demonstration and is not suitable for production security.
 
-## File-based storage
+---
 
-The app creates `data/` on first run and stores records in text files: `locations.txt`, `roads.txt`, `restaurants.txt`, `menu.txt`, `customers.txt` and `orders.txt`. This is a simple file-based store for a student project, not a full DBMS.
+## ⚠️ Project Limitations
 
-## Admin
+Path2Plate is an educational project developed to demonstrate C++ programming and Data Structures and Algorithms.
 
-Default demonstration PIN: `1234`.
+Current limitations include:
 
-This is a classroom project, not a production food-delivery or payment system.
+- No external database or DBMS integration.
+- No real payment gateway.
+- No real-time GPS tracking.
+- No OTP-based authentication.
+- No real delivery partner integration.
+- Admin authentication uses a demonstration PIN.
+- Restaurant favourites are stored in browser local storage on the current device.
+- Delivery tracking animations are simulated.
 
-## UI refresh (November 2026)
+---
 
-The browser interface has a refreshed warm cream, orange and deep-green colour palette, responsive navigation, a welcome banner, cuisine filters, restaurant search and sorting, locally saved favourite restaurants, clearer menu item rows, and a more structured checkout summary. These are frontend improvements; the original C++ API, text-file storage, queue, graph and Dijkstra route logic remain in place.
+## 🔮 Future Scope
 
-Favourites are stored in the browser's local storage on the current device. They are not synced between devices or stored in the C++ data files. Restaurant ratings, real-time maps, live payment processing, coupon redemption and OTP authentication are not implemented in this student demo. UPI and card options remain simulated, and the default admin PIN remains `1234` for classroom demonstration only. Do not deploy this project as a real payment or customer-data service without adding proper authentication, authorization, input/output safety and persistent database controls.
+The project can be improved further by adding:
 
+- Database integration using MySQL or another DBMS.
+- Real payment gateway integration.
+- Secure authentication and authorization.
+- OTP-based login.
+- Real-time GPS delivery tracking.
+- Improved admin dashboard.
+- Cloud-based data storage.
+- Better order management and notifications.
 
-## Recent UI improvements
-- Delivery tracking now includes a simple animated scooter marker on the Dijkstra route and a clearer order-status timeline.
-- Admin view includes summary cards, order-status progress bars, delivered revenue, customer/restaurant counts and average route distance.
-- The rider animation is a visual demo only; it does not use GPS or represent a real delivery partner location.
-- Order confirmation has a reference-inspired layout with a four-step progress tracker, route map, animated scooter illustration, estimated delivery time, item summary and payment total, styled in Path2Plate's cream, forest-green and orange theme.
+---
+
+## 🎯 Project Objective
+
+The main objective of Path2Plate is to apply C++ programming concepts and Data Structures and Algorithms to a practical real-world problem.
+
+Through this project, we demonstrate how structures, vectors, queues, graphs, priority queues, file handling, searching and Dijkstra's shortest-path algorithm can be used together to build a functional food ordering and delivery application.
+
+**Path2Plate – From Restaurant to Your Plate!** 🍕
