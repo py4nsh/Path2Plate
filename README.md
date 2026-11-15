@@ -6,6 +6,60 @@ Path2Plate is a small food-delivery demonstration app. It keeps the **applicatio
 
 > If your course rule literally prohibits HTML/CSS/JavaScript as well as Python, confirm that with your instructor: a browser UI needs a presentation layer. In this project, that layer only displays the interface; C++ handles the app operations and stored data.
 
+
+👥 Team Members & Contributions
+
+Member 1 – Customer and Order Module
+
+Responsibilities:
+
+* Customer registration and customer details management.
+* Food selection and cart management.
+* Bill calculation and order placement.
+
+Concepts Used: Classes, Objects, Encapsulation, Vectors, Functions, Linear Searching.
+
+Status: Implemented.
+
+Member 2 – Restaurant and Food Module
+
+Responsibilities:
+
+* Managing restaurant details.
+* Displaying food menus and storing food prices.
+* Restaurant and food selection.
+
+Concepts Used: Classes, Objects, Vectors, Functions.
+
+Status: Implemented.
+
+Member 3 – Route Optimization Module
+
+Responsibilities:
+
+* Representing locations and roads using a weighted graph.
+* Finding the shortest delivery route.
+* Optimizing delivery paths.
+
+Concepts Used: Graphs, Adjacency Lists, Dijkstra’s Algorithm, Priority Queue.
+
+Status: Under Development.
+
+Member 4 – Delivery and Integration Module
+
+Responsibilities:
+
+* Managing delivery orders using a queue.
+* Updating delivery statuses (Pending, Out for Delivery, Delivered).
+* Integrating all project modules into one application.
+* Developing the frontend/UI and connecting it with the backend.
+* Testing the complete application.
+* Implementing backend indexing and data management using C++.
+
+Concepts Used: Classes, Objects, Queues, Functions, C++ Data Structures and Integration.
+
+Status: Basic Functionality Implemented.
+
 ## Run on Windows
 
 1. Extract this folder to a normal location.
