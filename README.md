@@ -43,7 +43,7 @@ Responsibilities:
 
 Concepts Used: Graphs, Adjacency Lists, Dijkstra’s Algorithm, Priority Queue.
 
-Status: Under Development.
+Status: Implemented.
 
 Member 4 – Delivery and Integration Module
 
@@ -58,7 +58,7 @@ Responsibilities:
 
 Concepts Used: Classes, Objects, Queues, Functions, C++ Data Structures and Integration.
 
-Status: Basic Functionality Implemented.
+Status: Implemented.
 
 ## Run on Windows
 
